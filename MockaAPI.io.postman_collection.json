@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "5e6fbea7-edbf-4569-87c8-3d9a46a698ae",
+		"name": "MockaAPI.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31559389"
+	},
+	"item": [
+		{
+			"name": "get employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"get request of employees have code of 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"check the name of first id\", function () {\r",
+							"    var jsonfile = pm.response.json();\r",
+							"    pm.expect(jsonfile[0].name).to.equal(\"Mrs. Tomas Hintz\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"check the country of second id\", function () {\r",
+							"    var jsonfile = pm.response.json();\r",
+							"    pm.expect(jsonfile[1].countery).to.equal(\"France\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"check the mobile number of third id\", function () {\r",
+							"    var jsonfile = pm.response.json();\r",
+							"    pm.expect(jsonfile[2].mobile).to.equal(\"492.895.8195\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/employees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post new employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonfile = pm.response.json();\r",
+							"\r",
+							"console.log(jsonfile[4]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"name\": \"Mohamed Rezk\",\r\n      \"countery\": \"Egypt\",\r\n      \"mobile\": \"01274346757\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit all in employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"name\": \"Violet Mertz V\",\r\n      \"countery\": \"France\",\r\n      \"mobile\": \"01127729056\",\r\n      \"id\": \"2\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employees/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employees",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit some in employee",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"countery\" : \"Germany\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employees/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employees",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/employees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

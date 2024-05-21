@@ -1,0 +1,506 @@
+{
+	"id": "3e4876e0-395f-4636-b120-2add0f1c822e",
+	"name": "Trello API Project",
+	"timestamp": "2024-03-26T12:37:23.507Z",
+	"collection_id": "31559389-3f317785-3aae-46c1-902f-2aedefd4a444",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-03-26T12:37:10.519Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "7c250cde-da72-43eb-b092-b5b91df793ac",
+			"name": "Create a Board",
+			"url": "https://api.trello.com/1/boards/?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014\n&name=selenium",
+			"time": 962,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				962
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9bb7dede-c6db-496c-ab82-7866f4d87af1",
+			"name": "Update a Board",
+			"url": "https://api.trello.com/1/boards/6602c177ab140f712e2027c4?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=Rest_Assuerd",
+			"time": 512,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				512
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9baa6379-58b8-4411-a2b3-ec8457e3055d",
+			"name": "Get a Board",
+			"url": "https://api.trello.com/1/boards/6602c177ab140f712e2027c4?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 239,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				239
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "269ef15f-2938-493a-8ede-f8ad427911c1",
+			"name": "Delete a Board",
+			"url": "https://api.trello.com/1/boards/6602c177ab140f712e2027c4?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 1533,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1533
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6efda130-3824-49b6-b4b9-213e036ea2f7",
+			"name": "Create a Board Copy",
+			"url": "https://api.trello.com/1/boards/?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=selenium",
+			"time": 537,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				537
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6a308d64-d177-40e7-a9d3-5282974639bd",
+			"name": "Create a List",
+			"url": "https://api.trello.com/1/lists?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=Elements&idBoard=6602c17bc1c10452936f36ff",
+			"time": 625,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				625
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "26ff2bcc-50ec-4418-a114-fae9a56fbd10",
+			"name": "Update a List",
+			"url": "https://api.trello.com/1/lists/6602c17b67b94fbcf2d13d6e?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=Actions",
+			"time": 294,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				294
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "282a6645-dacd-4960-9888-831b1ddf93eb",
+			"name": "Get a List",
+			"url": "https://api.trello.com/1/lists/6602c17b67b94fbcf2d13d6e?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 239,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				239
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f1d037a5-d199-4f66-91a2-89b30d7b03cd",
+			"name": "Create a Card",
+			"url": "https://api.trello.com/1/cards?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&idList=6602c17b67b94fbcf2d13d6e&name=Xpath&desc=(\"//*[@key='value']\")",
+			"time": 401,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				401
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6dee9e83-a2c5-4c8d-9e6e-37618192eb7f",
+			"name": "Update a Card",
+			"url": "https://api.trello.com/1/cards/6602c17d6548ab7e43c6a3e7?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&desc=(\"//*[contains(@key,value)]\")",
+			"time": 420,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				420
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6ef4824d-04bb-4040-8df4-cd69302538df",
+			"name": "Get a Card",
+			"url": "https://api.trello.com/1/cards/6602c17d6548ab7e43c6a3e7?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 311,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				311
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "aa867b72-a343-4d6a-a0c0-2b76950dfb21",
+			"name": "Delete A Card",
+			"url": "https://api.trello.com/1/cards/6602c17d6548ab7e43c6a3e7?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 706,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				706
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "debe83ab-3a11-4c1c-97c0-8774e22f5005",
+			"name": "Create a Card Copy",
+			"url": "https://api.trello.com/1/cards?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&idList=6602c17b67b94fbcf2d13d6e&name=Xpath&desc=(\"//*[@key='value']\")",
+			"time": 449,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				449
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c9548504-ad48-4e48-bcad-9493dbcfe258",
+			"name": "Create a CheckList",
+			"url": "https://api.trello.com/1/checklists?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&idCard=6602c17fd8ea7be22884c83f&name=Relative",
+			"time": 394,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				394
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ee043035-7d13-4d6a-9fea-fea272d0a44f",
+			"name": "Update a CheckList",
+			"url": "https://api.trello.com/1/checklists/6602c17f26345ab279245f4e?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=Absolute",
+			"time": 299,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				299
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "126333bf-e3a4-4232-8e80-08c76324ad66",
+			"name": "Get a CheckList",
+			"url": "https://api.trello.com/1/checklists/6602c17f26345ab279245f4e?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 283,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				283
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d9cfaa7a-a28d-4bc0-b3d9-63026bd9b114",
+			"name": "Delete a CheckList",
+			"url": "https://api.trello.com/1/checklists/6602c17f26345ab279245f4e?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 521,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				521
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f74c2f1d-58c6-4a5a-98b0-308a0eeaff88",
+			"name": "Create a CheckList Copy",
+			"url": "https://api.trello.com/1/checklists?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&idCard=6602c17fd8ea7be22884c83f&name=Relative",
+			"time": 479,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				479
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a0d66241-1d4a-41ef-bab9-6ef47dbb7202",
+			"name": "Add Items On CheckList",
+			"url": "https://api.trello.com/1/checklists/6602c1815612879378e1b780/checkItems?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=commonRule",
+			"time": 454,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				454
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9528900e-6581-4d9c-bdb1-ae0c77151bfb",
+			"name": "Get Item On CheckList",
+			"url": "https://api.trello.com/1/checklists/6602c1815612879378e1b780/checkItems/6602c181382aa319964c8051?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 229,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				229
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2949cfd9-ab43-4c8a-8aeb-b2cb955e2748",
+			"name": "Delete Item On CheckList",
+			"url": "https://api.trello.com/1/checklists/6602c1815612879378e1b780/checkItems/6602c181382aa319964c8051?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014",
+			"time": 386,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				386
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1be36385-542e-45b5-ac0f-436731ecbdf3",
+			"name": "Add Items On CheckList Copy",
+			"url": "https://api.trello.com/1/checklists/6602c1815612879378e1b780/checkItems?key=08bfb25f9fb14515313c8ad6d1ebde0f&token=ATTA87e6de7916652b2a5749907dd50805a2fe72382b6c8caa1b3e027deec689d95c376AC014&name=commonRule",
+			"time": 330,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				330
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 10603,
+	"collection": {
+		"requests": [
+			{
+				"id": "7c250cde-da72-43eb-b092-b5b91df793ac",
+				"method": "POST"
+			},
+			{
+				"id": "9bb7dede-c6db-496c-ab82-7866f4d87af1",
+				"method": "PUT"
+			},
+			{
+				"id": "9baa6379-58b8-4411-a2b3-ec8457e3055d",
+				"method": "GET"
+			},
+			{
+				"id": "269ef15f-2938-493a-8ede-f8ad427911c1",
+				"method": "DELETE"
+			},
+			{
+				"id": "6efda130-3824-49b6-b4b9-213e036ea2f7",
+				"method": "POST"
+			},
+			{
+				"id": "6a308d64-d177-40e7-a9d3-5282974639bd",
+				"method": "POST"
+			},
+			{
+				"id": "26ff2bcc-50ec-4418-a114-fae9a56fbd10",
+				"method": "PUT"
+			},
+			{
+				"id": "282a6645-dacd-4960-9888-831b1ddf93eb",
+				"method": "GET"
+			},
+			{
+				"id": "f1d037a5-d199-4f66-91a2-89b30d7b03cd",
+				"method": "POST"
+			},
+			{
+				"id": "6dee9e83-a2c5-4c8d-9e6e-37618192eb7f",
+				"method": "PUT"
+			},
+			{
+				"id": "6ef4824d-04bb-4040-8df4-cd69302538df",
+				"method": "GET"
+			},
+			{
+				"id": "aa867b72-a343-4d6a-a0c0-2b76950dfb21",
+				"method": "DELETE"
+			},
+			{
+				"id": "debe83ab-3a11-4c1c-97c0-8774e22f5005",
+				"method": "POST"
+			},
+			{
+				"id": "c9548504-ad48-4e48-bcad-9493dbcfe258",
+				"method": "POST"
+			},
+			{
+				"id": "ee043035-7d13-4d6a-9fea-fea272d0a44f",
+				"method": "PUT"
+			},
+			{
+				"id": "126333bf-e3a4-4232-8e80-08c76324ad66",
+				"method": "GET"
+			},
+			{
+				"id": "d9cfaa7a-a28d-4bc0-b3d9-63026bd9b114",
+				"method": "DELETE"
+			},
+			{
+				"id": "f74c2f1d-58c6-4a5a-98b0-308a0eeaff88",
+				"method": "POST"
+			},
+			{
+				"id": "a0d66241-1d4a-41ef-bab9-6ef47dbb7202",
+				"method": "POST"
+			},
+			{
+				"id": "9528900e-6581-4d9c-bdb1-ae0c77151bfb",
+				"method": "GET"
+			},
+			{
+				"id": "2949cfd9-ab43-4c8a-8aeb-b2cb955e2748",
+				"method": "DELETE"
+			},
+			{
+				"id": "1be36385-542e-45b5-ac0f-436731ecbdf3",
+				"method": "POST"
+			}
+		]
+	}
+}

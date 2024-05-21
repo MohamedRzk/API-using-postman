@@ -1,0 +1,894 @@
+{
+	"info": {
+		"_postman_id": "3f317785-3aae-46c1-902f-2aedefd4a444",
+		"name": "Trello API Project",
+		"description": "in this API testing project\n\nwe will create a project in Postman, an API testing project that tests the Trello\n\nboard creation.\n\nSo, in Trello we discussed the Trello.\n\nWe create a board, then create a list inside this board, then inside the list we can create a card\n\nand then add, for example, a checklist inside this card.\n\nSo we will automate all this process using postman.\n\nThe first step is to open Trello APIs and understand them.\n\nAny API should have a type of documentation that tells you how to deal with this API.\n\nSo, I will navigate to Google and write Trello API.\n\nSo, this is a Trello rest API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31559389"
+	},
+	"item": [
+		{
+			"name": "Board",
+			"item": [
+				{
+					"name": "Create a Board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"boardID\", jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{basetrello}}/1/boards/?key={{key}}&token={{token}}&name=selenium",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "selenium"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Board",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/boards/{{boardID}}?key={{key}}&token={{token}}&name=Rest_Assuerd",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "Rest_Assuerd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Board",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{basetrello}}/1/boards/{{boardID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Board",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/boards/{{boardID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Board Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"boardID\", jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{basetrello}}/1/boards/?key={{key}}&token={{token}}&name=selenium",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "selenium"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "Create a List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"ListID\",jsondata.id);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/lists?key={{key}}&token={{token}}&name=Elements&idBoard={{boardID}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "Elements"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{boardID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a List",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/lists/{{ListID}}?key={{key}}&token={{token}}&name=Actions",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"lists",
+								"{{ListID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "Actions"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/lists/{{ListID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"lists",
+								"{{ListID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "Create a Card",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"pm.globals.set(\"CardID\",jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/cards?key={{key}}&token={{token}}&idList={{ListID}}&name=Xpath&desc=(\"//*[@key='value']\")",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "idList",
+									"value": "{{ListID}}"
+								},
+								{
+									"key": "name",
+									"value": "Xpath"
+								},
+								{
+									"key": "desc",
+									"value": "(\"//*[@key='value']\")"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Card",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/cards/{{CardID}}?key={{key}}&token={{token}}&desc=(\"//*[contains(@key,value)]\")",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"cards",
+								"{{CardID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "desc",
+									"value": "(\"//*[contains(@key,value)]\")"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/cards/{{CardID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"cards",
+								"{{CardID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Card",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/cards/{{CardID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"cards",
+								"{{CardID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Card Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"pm.globals.set(\"CardID\",jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/cards?key={{key}}&token={{token}}&idList={{ListID}}&name=Xpath&desc=(\"//*[@key='value']\")",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "idList",
+									"value": "{{ListID}}"
+								},
+								{
+									"key": "name",
+									"value": "Xpath"
+								},
+								{
+									"key": "desc",
+									"value": "(\"//*[@key='value']\")"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CheckList",
+			"item": [
+				{
+					"name": "Create a CheckList",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"pm.globals.set(\"CheckListID\",jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists?key={{key}}&token={{token}}&idCard={{CardID}}&name=Relative",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "idCard",
+									"value": "{{CardID}}"
+								},
+								{
+									"key": "name",
+									"value": "Relative"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a CheckList",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}?key={{key}}&token={{token}}&name=Absolute",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "Absolute"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a CheckList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a CheckList",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a CheckList Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"pm.globals.set(\"CheckListID\",jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists?key={{key}}&token={{token}}&idCard={{CardID}}&name=Relative",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "idCard",
+									"value": "{{CardID}}"
+								},
+								{
+									"key": "name",
+									"value": "Relative"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Items On CheckList",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"pm.globals.set(\"ItemID\",jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}/checkItems?key={{key}}&token={{token}}&name=commonRule",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}",
+								"checkItems"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "commonRule"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item On CheckList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}/checkItems/{{ItemID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}",
+								"checkItems",
+								"{{ItemID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item On CheckList",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}/checkItems/{{ItemID}}?key={{key}}&token={{token}}",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}",
+								"checkItems",
+								"{{ItemID}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Items On CheckList Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"pm.globals.set(\"ItemID\",jsondata.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{basetrello}}/1/checklists/{{CheckListID}}/checkItems?key={{key}}&token={{token}}&name=commonRule",
+							"host": [
+								"{{basetrello}}"
+							],
+							"path": [
+								"1",
+								"checklists",
+								"{{CheckListID}}",
+								"checkItems"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "commonRule"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
