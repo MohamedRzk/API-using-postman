@@ -7,58 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Login",
-			"item": [
-				{
-					"name": "User Login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var jsondata = pm.response.json();\r",
-									"\r",
-									"pm.globals.set(\"StoreToken\",jsondata.token);"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n     \"username\": \"mor_2314\",\r\n     \"password\": \"83r5^_\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseurl}}/auth/login",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "products",
 			"item": [
 				{
@@ -251,6 +199,538 @@
 							"path": [
 								"products",
 								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "get all cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].products[0].productId).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/carts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/carts/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "limit results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/carts?limit=3",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"carts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sort results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].products[0].productId).to.eql(18);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/carts?sort=desc",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"carts"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "data range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/carts?startdate=2019-12-10&enddate=2020-10-10",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"carts"
+							],
+							"query": [
+								{
+									"key": "startdate",
+									"value": "2019-12-10"
+								},
+								{
+									"key": "enddate",
+									"value": "2020-10-10"
+								},
+								{
+									"key": "date",
+									"value": "2020-03-01",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/carts/user/2",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"carts",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"check data of first user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(1);\r",
+									"    pm.expect(jsonData[0].address.geolocation.long)\r",
+									"    .to.eql(\"81.1496\");\r",
+									"    pm.expect(jsonData[0].address.city).to.eql(\"kilcoole\");\r",
+									"    pm.expect(jsonData[0].address.zipcode).to.eql(\"12926-3874\");\r",
+									"    pm.expect(jsonData[0].address.number).to.eql(7682);\r",
+									"    pm.expect(jsonData[0].username).to.eql(\"johnd\");\r",
+									"    pm.expect(jsonData[0].password).to.eql(\"m38rmF$\");\r",
+									"});\r",
+									"pm.test(\"check data of second user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[1].username).to.eql(\"mor_2314\");\r",
+									"    pm.expect(jsonData[1].password).to.eql(\"83r5^_\");\r",
+									"});\r",
+									"pm.test(\"check data of third user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[2].username).to.eql(\"kevinryan\");\r",
+									"    pm.expect(jsonData[2].password).to.eql(\"kev02937@\");\r",
+									"});\r",
+									"pm.test(\"check data of fourth user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[3].username).to.eql(\"donero\");\r",
+									"    pm.expect(jsonData[3].password).to.eql(\"ewedon\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.address.city).to.eql(\"kilcoole\");\r",
+									"    pm.expect(jsonData.address.geolocation.long)\r",
+									"    .to.eql(\"81.1496\");\r",
+									"    pm.expect(jsonData.username).to.eql(\"johnd\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"m38rmF$\");\r",
+									"    pm.expect(jsonData.name.firstname).to.eql(\"john\");\r",
+									"    pm.expect(jsonData.id).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "limit results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"check data of fiveth user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[4].id).to.eql(5);\r",
+									"    pm.expect(jsonData[4].address.geolocation.long)\r",
+									"    .to.eql(\"-40.1310\");\r",
+									"    pm.expect(jsonData[4].address.city).to.eql(\"san Antonio\");\r",
+									"    pm.expect(jsonData[4].address.zipcode).to.eql(\"80796-1234\");\r",
+									"    pm.expect(jsonData[4].address.number).to.eql(245);\r",
+									"    pm.expect(jsonData[4].username).to.eql(\"derek\");\r",
+									"    pm.expect(jsonData[4].password).to.eql(\"jklg*_56\");\r",
+									"    pm.expect(jsonData[4].name.firstname)\r",
+									"    .to.eql(\"derek\");\r",
+									"    pm.expect(jsonData[4].name.lastname)\r",
+									"    .to.eql(\"powell\");\r",
+									"    pm.expect(jsonData[4].phone).to.eql(\"1-956-001-1945\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users?limit=5",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sort results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"check data of first user\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(10);\r",
+									"    pm.expect(jsonData[0].address.geolocation.long)\r",
+									"    .to.eql(\"-20.545419\");\r",
+									"    pm.expect(jsonData[0].address.city).to.eql(\"fort wayne\");\r",
+									"    pm.expect(jsonData[0].address.zipcode).to.eql(\"10256-4532\");\r",
+									"    pm.expect(jsonData[0].address.number).to.eql(526);\r",
+									"    pm.expect(jsonData[0].username).to.eql(\"jimmie_k\");\r",
+									"    pm.expect(jsonData[0].password).to.eql(\"klein*#%*\");\r",
+									"    pm.expect(jsonData[0].name.firstname)\r",
+									"    .to.eql(\"jimmie\");\r",
+									"    pm.expect(jsonData[0].name.lastname)\r",
+									"    .to.eql(\"klein\");\r",
+									"    pm.expect(jsonData[0].phone).to.eql(\"1-104-001-4567\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users?sort=desc",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test the data entered to dataBase\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(11);\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Test the dataType of body\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\"))\r",
+									"    .to.contains(\"application/json\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": {\r\n        \"geolocation\": {\r\n            \"lat\": \"38.32587\",\r\n            \"long\": \"95.1496\"\r\n        },\r\n        \"city\": \"alexandria\",\r\n        \"street\": \"toson housing\",\r\n        \"number\": 1,\r\n        \"zipcode\": \"365-9635\"\r\n    },\r\n    \"email\": \"m7mdezk@gmail.com\",\r\n    \"username\": \"m7mdrzk\",\r\n    \"password\": \"s51251sd$\",\r\n    \"name\": {\r\n        \"firstname\": \"mohamed\",\r\n        \"lastname\": \"rezk\"\r\n    },\r\n    \"phone\": \"01274346757\",\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"check data updated to dataBase correctly\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.username).to.eql(\"walid\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"25asd5#\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"walid\",\r\n    \"password\":\"25asd5#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/7",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/users/6",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"StoreToken\",jsondata.token);\r",
+									"\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.token)\r",
+									"    .to.contains(\"eyJhbGciOiJIUzI1NiIsInR\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"username\": \"mor_2314\",\r\n     \"password\": \"83r5^_\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/auth/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"auth",
+								"login"
 							]
 						}
 					},
